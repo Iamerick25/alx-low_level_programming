@@ -10,20 +10,18 @@ int main(void)
 {
 	int c, i;
 
-	c = i = '0';
-
-	for (c = '0'; c <= '9'; c++)
+	for (c = 0; c < 9; c++)
 	{
-		for (i = '0'; i <= '9'; i++)
+		for (i = c + 1; i < 10; i++)
 		{
-			putchar(c);
-			putchar(i);
+			putchar((c % 10) + '0');
+			putchar((i % 10) + '0');
 
-			if ((c != '9') || (c == '9' && i != '9'))
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			if (c == 8 && i == 9)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
 
