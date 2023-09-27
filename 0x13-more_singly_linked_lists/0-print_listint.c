@@ -7,13 +7,11 @@
 *
 * Return: number of nodes
 */
-/* create a templates for the nodes */
 size_t print_listint(const listint_t *h)
 {
-	/* declare a node struct */
 	size_t count = 0;
 
-	while (h)
+	while (h != NULL)
 	{
 		printf("%d\n", h->n);
 		h = h->next;
